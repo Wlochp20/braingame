@@ -1,1 +1,5 @@
-<p>answer works!</p>
+<div class="answer-wrapper">
+    <div *ngIf="answer=='wrong'" class="answer-wrapper-wrong"></div>
+    <div *ngIf="answer=='current'" class="answer-wrapper-current">*</div>
+    <div *ngIf="answer=='correct'" class="answer-wrapper-correct"></div>
+</div>
