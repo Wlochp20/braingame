@@ -1,0 +1,4 @@
+<div (click)="onChange()" class="menu">
+    <div [ngClass]="isBtnClicked? 'menu-opener-active':'menu-opener'"></div>
+</div>
+<div *ngIf="isBtnClicked" class="menu-content"></div>

@@ -1,0 +1,82 @@
+.menu{
+    cursor: pointer;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-content{
+        width: 200vw;
+        height: 200vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 0px 0px 0px 100%;
+        background-color: #1E1E1E;
+        animation-name: open;
+        animation-duration: 1.5s;
+    }
+    &-opener{
+        width: 50px;
+        height: 7px;
+        border-radius: 10px;
+        background-color: #313131;
+        &::after{
+            content: "";
+            width: 50px;
+            height: 7px;
+            position: absolute;
+            top: 10px;
+            border-radius: 10px;
+            background-color: #313131;
+        }
+        &::before{
+            content: "";
+            width: 50px;
+            height: 7px;
+            position: absolute;
+            bottom: 10px;
+            border-radius: 10px;
+            background-color: #313131;
+        }
+        &-active{
+            width: 50px;
+            height: 7px;
+            background: #E6E6E6;
+            border-radius: 10px;
+            transform: rotate(45deg);
+            animation-name: colorChange;
+            animation-duration: 0.5s;
+            animation-direction:alternate;
+            &::after{
+                content: "";
+                width: 50px;
+                height: 7px;
+                position: absolute;
+                top: 0px;
+                border-radius: 10px;
+                background-color: #E6E6E6;
+                transform: rotate(-90deg);
+                animation-name: colorChange;
+                animation-duration: 0.5s;
+                animation-direction:alternate;
+            }
+        }
+    }
+}
+
+@keyframes colorChange {
+    from {background-color: #313131;transform: rotate(0);}
+    to {background-color: #E6E6E6;}
+  }
+
+@keyframes open{
+    0%{width: 0;height: 0;  }
+    60%{height: 200vh;}
+    100%{}
+  }

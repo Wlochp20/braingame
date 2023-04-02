@@ -1,0 +1,33 @@
+.calculations-container{
+    height: 200px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    &-calculation{
+        letter-spacing: 0.4em;
+        font-size: 128px;
+        font-family: 'Inter', sans-serif;
+    }
+    &-number{
+        height: 100px;
+        width: 100px;
+        background-color: #E2E2E2;
+        overflow: hidden;
+        border: 0;
+        border-radius: 5px;
+        font-size: 50px;
+        font-family: 'Inter', sans-serif;
+    }
+}
+@media only screen and (max-width: 650px){
+    .calculations-container{
+        &-calculation{
+            font-size:9cqmax;
+        }
+        &-number{
+            height: 70px;
+            width: 70px;
+            font-size: 30px;
+        }
+    }
+}

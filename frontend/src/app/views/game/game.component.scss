@@ -1,14 +1,36 @@
 .game-wrapper{
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     &-text{
+        margin-top: 20px;
         font-family: 'Quicksand', sans-serif;
         font-size: 50px;
     }
     &-answers{
-        width: 500px;
+        width: 45vmax;
+        margin-top: 50px;
         display: flex;
         justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .game-wrapper{
+        flex-direction: column-reverse;
+        &-text{
+            margin-top: -200px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 50px;
+        }
+        &-answers{
+            margin-bottom: 50px;
+            width: 45vmax;
+            display: flex;
+            justify-content: space-around;
+        }
     }
 }
