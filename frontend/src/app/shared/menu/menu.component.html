@@ -1,4 +1,14 @@
 <div (click)="onChange()" class="menu">
     <div [ngClass]="isBtnClicked? 'menu-opener-active':'menu-opener'"></div>
 </div>
-<div *ngIf="isBtnClicked" class="menu-content"></div>
+<div [ngClass]="isBtnClicked? 'menu-content':'menu-content-disactive'" class="menu-content">
+    <div [ngClass]="isBtnClicked? 'menu-content-btns':'menu-content-btns-disactive'" >
+        <app-button class="menu-content-btns-btn" content="log in"></app-button>
+        <app-button class="menu-content-btns-btn" content="register"></app-button>
+        <div class="menu-content-btns-wrapper">
+            <app-block img="statistic.png" content="statistics"></app-block>
+            <app-block img="history.png" content="history"></app-block>
+            <app-block img="settings.png" content="settings"></app-block>
+        </div>
+    </div>
+</div>

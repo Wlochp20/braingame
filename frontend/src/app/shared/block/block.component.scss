@@ -1,0 +1,20 @@
+.container{
+    cursor: pointer;
+    width: 204px;
+    height: 186px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 9px;
+    background-color: #1E1E1E;
+    &:hover{
+        background-color: #272727 ;
+    }
+    &-text{
+        font-size: 36px;
+        color: #FFF;
+        font-family: 'quicksand','sans-serif';
+    }
+}

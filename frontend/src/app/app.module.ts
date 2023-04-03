@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AnswerComponent } from './shared/answer/answer.component';
 import { CalculationsComponent } from './shared/calculations/calculations.component';
 import { MenuComponent } from './shared/menu/menu.component';
+import { ButtonComponent } from './shared/button/button.component';
+import { BlockComponent } from './shared/block/block.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { MenuComponent } from './shared/menu/menu.component';
     GameComponent,
     AnswerComponent,
     CalculationsComponent,
-    MenuComponent
+    MenuComponent,
+    ButtonComponent,
+    BlockComponent
   ],
   imports: [
     BrowserModule,

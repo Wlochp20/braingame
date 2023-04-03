@@ -18,14 +18,59 @@
         right: 0;
         border-radius: 0px 0px 0px 100%;
         background-color: #1E1E1E;
-        animation-name: open;
-        animation-duration: 1.5s;
+        transition: width 1s,height 1s; 
+        &-disactive{
+            width: 0;
+            height: 0;
+            transition: width 1s,height 1s; 
+        }
+        &-btns{
+            width: 100vw;
+            margin-left: auto;
+            margin-top: 30vh;
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            animation-name: change;
+            animation-duration: 5s;
+            &-disactive{
+                width: 100vw;
+                margin-top: 30vh;
+                height: 170px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-between;
+                transition: margin-left 1s;
+                &-wrapper{
+                    width: 100vw;
+                    margin-top: 10vh;
+                    display: flex;
+                    justify-content: space-around;
+                }
+                &-btn{
+                    margin: 20px;
+                }
+            }
+            &-wrapper{
+                width: 100vw;
+                margin-top: 10vh;
+                display: flex;
+                justify-content: space-around;
+            }
+            &-btn{
+                margin: 20px;
+            }
+        }
     }
     &-opener{
         width: 50px;
         height: 7px;
         border-radius: 10px;
         background-color: #313131;
+        
         &::after{
             content: "";
             width: 50px;
@@ -75,8 +120,7 @@
     to {background-color: #E6E6E6;}
   }
 
-@keyframes open{
-    0%{width: 0;height: 0;  }
-    60%{height: 200vh;}
-    100%{}
+  @keyframes change {
+    from {margin-left:50%;}
+    to {margin-left:auto}
   }
