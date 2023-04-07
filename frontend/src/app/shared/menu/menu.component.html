@@ -2,7 +2,7 @@
     <div [ngClass]="isBtnClicked? 'menu-opener-active':'menu-opener'"></div>
 </div>
 <div [ngClass]="isBtnClicked? 'menu-content':'menu-content-disactive'" class="menu-content">
-    <div [ngClass]="isBtnClicked? 'menu-content-btns':'menu-content-btns-disactive'" >
+    <div *ngIf="isBtnClicked" class="menu-content-btns">
         <app-button class="menu-content-btns-btn" content="log in"></app-button>
         <app-button class="menu-content-btns-btn" content="register"></app-button>
         <div class="menu-content-btns-wrapper">
