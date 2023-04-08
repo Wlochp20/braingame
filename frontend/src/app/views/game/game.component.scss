@@ -12,9 +12,14 @@
     }
     &-answers{
         width: 45vmax;
+        height: auto;
         margin-top: 50px;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+        &-answer{
+            margin: 5px 20px;
+        }
     }
 }
 
@@ -29,6 +34,7 @@
         &-answers{
             margin-bottom: 50px;
             width: 45vmax;
+            height: 200px;
             display: flex;
             justify-content: space-around;
         }

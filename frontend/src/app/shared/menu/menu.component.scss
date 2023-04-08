@@ -18,11 +18,11 @@
         right: 0;
         border-radius: 0px 0px 0px 100%;
         background-color: #1E1E1E;
-        transition: width 1s,height 1s; 
+        transition: width 0.5s,height 0.5s; 
         &-disactive{
             width: 0;
             height: 0;
-            transition: width 1s,height 1s; 
+            transition: width 0.5s,height 0.5s; 
         }
         &-btns{
             position: fixed;
@@ -37,7 +37,7 @@
             justify-content: space-between;
             flex-direction: column;
             animation-name: change;
-            -webkit-animation-delay: 0.5s;
+            -webkit-animation-delay: 0.3s;
             -webkit-animation-fill-mode: forwards;
             animation-duration: 0.5s;
             &-wrapper{

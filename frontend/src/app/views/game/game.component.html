@@ -1,12 +1,8 @@
 <app-menu></app-menu>
 <div class="game-wrapper">
-    <app-calculations></app-calculations>
+    <app-calculations (answered)="checkAnswer($event)" [b]="numberB" [a]="numberA" [symbol]="symbol"></app-calculations>
     <div class="game-wrapper-answers">
-        <app-answer></app-answer>
-        <app-answer></app-answer>
-        <app-answer></app-answer>
-        <app-answer></app-answer>
-        <app-answer></app-answer>
+        <app-answer class="game-wrapper-answers-answer" [answer]="item" *ngFor="let item of answers"></app-answer>
     </div>
     <span class="game-wrapper-text">write answer</span>
 </div>
