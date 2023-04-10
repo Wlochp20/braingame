@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-settings-menu',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./settings-menu.component.scss']
 })
 export class SettingsMenuComponent {
+  constructor(private location: Location) { }
 
+  goBack(){
+    this.location.back();
+   }
 }
