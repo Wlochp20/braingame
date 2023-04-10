@@ -1,0 +1,38 @@
+<div class="container">
+    <app-settings-menu></app-settings-menu>
+    <app-settings-title content="game settings"></app-settings-title>
+    <div class="container-game-settings">
+        <div class="container-game-settings-wrapper">
+            <app-option (checked)="changeOptVisible()" content="timer"></app-option>
+            <div *ngIf="timerChecked">time: <input value="3" type="number"> sec</div>
+        </div>
+        <div class="container-game-settings-wrapper">
+            <div>
+                <span>number of questions: </span>
+                <select>
+                    <option value="infinity"></option>
+                    <option value="other"></option>
+                </select>
+            </div>
+            <div>
+                <span>number range: </span>
+                <input value="0" type="number">
+                <span>to</span>
+                <input value="10" type="number">
+            </div>
+        </div>
+    </div>
+    <app-settings-title content="mathematical operations"></app-settings-title>
+    <div class="container-mathematical-operations">
+        <div class="container-mathematical-operations-wrapper">
+            <app-option [isChecked]="true" class="container-mathematical-operations-wrapper-opt" content="addition" symbol="+"></app-option>
+            <app-option [isChecked]="true" class="container-mathematical-operations-wrapper-opt" content="subtraction" symbol="-"></app-option>
+            <app-option class="container-mathematical-operations-wrapper-opt" content="roots"></app-option>
+        </div>
+        <div class="container-mathematical-operations-wrapper">
+            <app-option [isChecked]="true" class="container-mathematical-operations-wrapper-opt" content="multiplication" symbol="*"></app-option>
+            <app-option [isChecked]="true" class="container-mathematical-operations-wrapper-opt" content="division" symbol=":"></app-option> 
+            <app-option class="container-mathematical-operations-wrapper-opt" content="negative numbers"></app-option>       
+        </div>
+    </div>
+</div>

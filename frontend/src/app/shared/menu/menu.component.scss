@@ -1,6 +1,6 @@
 .menu{
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
     width: 50px;
     height: 50px;
     position: absolute;
@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     &-content{
+        z-index: 1;
         width: 200vw;
         height: 200vh;
         position: absolute;
@@ -42,9 +43,9 @@
             animation-duration: 0.5s;
             &-wrapper{
                 width: 100vw;
-                margin-top: 10vh;
+                margin-top: 15vh;
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-evenly;
             }
             &-btn{
                 margin: 20px;

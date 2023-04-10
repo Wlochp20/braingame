@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-calculations',
@@ -10,6 +10,12 @@ export class CalculationsComponent {
   @Input() b:number = 0;
   @Input() symbol:String = '+';
   @Output() answered = new EventEmitter<string>()
+
+  constructor(private elementRef: ElementRef) {}
+  ngAfterViewInit(){
+      const inputElement: HTMLInputElement = this.elementRef.nativeElement.querySelector('#answer');
+      inputElement.focus();
+    }
   
   checkAnswer(event:any){
     if ((this.result())==event.target.value) {

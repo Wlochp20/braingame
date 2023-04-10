@@ -1,0 +1,13 @@
+<app-menu></app-menu>
+<div class="container">
+    <span class="container-title">Congratulations!</span>
+    <span class="container-subtitle">Your time is {{(time/10).toFixed(1)}}s</span>
+    <span class="container-addictional">an average of {{((time/10)/answers.length).toFixed(1)}} seconds per question</span>
+    <div class="container-answer-correction">
+        <div><img class="container-answer-correction-img" src="../../../assets/correct.png" alt="correct"> <span>{{correct}}/{{answers.length}} correct</span></div>
+        <div><img class="container-answer-correction-img" src="../../../assets/wrong.png" alt="correct"> <span>{{wrong}}/{{answers.length}} incorrect</span></div>
+    </div>
+    <div class="container-answers">
+        <app-button (click)="navigate('game')" content="restart game"></app-button>
+    </div>  
+</div>

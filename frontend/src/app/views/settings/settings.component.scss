@@ -1,0 +1,53 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    &-game-settings{
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+        &-wrapper{
+            height: 100px;
+            margin-top: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+            font-family: 'Quicksand','sans-serif';
+            font-size: 20px;
+        }
+    }
+    &-mathematical-operations{
+        width: 100vw;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        &-wrapper{
+            width: 100vw;
+            margin-top: -100px;
+            display: flex;
+            justify-content: space-evenly;
+            &-opt{
+                width: 200px;
+            }
+        }
+    }
+}
+input{
+    width: 40px;
+    margin: 0 15px;
+    font-family: 'quicksand';
+    font-size: 15px;
+    font-weight: 600;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

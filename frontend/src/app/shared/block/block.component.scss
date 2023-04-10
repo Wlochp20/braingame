@@ -1,7 +1,7 @@
 .container{
     cursor: pointer;
-    width: 204px;
-    height: 186px;
+    width: 20vmin;
+    height: 20vmin;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -13,7 +13,8 @@
         background-color: #272727 ;
     }
     &-text{
-        font-size: 36px;
+        font-size: 25px;
+        font-weight: 300;
         color: #FFF;
         font-family: 'quicksand','sans-serif';
     }

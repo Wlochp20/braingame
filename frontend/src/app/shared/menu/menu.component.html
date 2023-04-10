@@ -3,12 +3,13 @@
 </div>
 <div [ngClass]="isBtnClicked? 'menu-content':'menu-content-disactive'" class="menu-content">
     <div *ngIf="isBtnClicked" class="menu-content-btns">
-        <app-button class="menu-content-btns-btn" content="log in"></app-button>
-        <app-button class="menu-content-btns-btn" content="register"></app-button>
+        <app-button (click)="navigate('login')" class="menu-content-btns-btn" content="log in"></app-button>
+        <app-button (click)="navigate('register')" class="menu-content-btns-btn" content="register"></app-button>
         <div class="menu-content-btns-wrapper">
-            <app-block img="statistic.png" content="statistics"></app-block>
+            <app-block img="statistic.png" content="shortcuts"></app-block>
             <app-block img="history.png" content="history"></app-block>
-            <app-block img="settings.png" content="settings"></app-block>
+            <app-block (click)="navigate('settings')" img="settings.png" content="settings"></app-block>
         </div>
     </div>
+
 </div>

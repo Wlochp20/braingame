@@ -9,6 +9,15 @@ import { CalculationsComponent } from './shared/calculations/calculations.compon
 import { MenuComponent } from './shared/menu/menu.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { BlockComponent } from './shared/block/block.component';
+import { SumUpComponent } from './views/sum-up/sum-up.component';
+import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
+import { TitleComponent } from './shared/title/title.component';
+import { SettingsComponent } from './views/settings/settings.component';
+import { GameHistoryComponent } from './views/game-history/game-history.component';
+import { SettingsTitleComponent } from './shared/settings-title/settings-title.component';
+import { OptionComponent } from './shared/option/option.component';
+import { SettingsMenuComponent } from './shared/settings-menu/settings-menu.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +27,16 @@ import { BlockComponent } from './shared/block/block.component';
     CalculationsComponent,
     MenuComponent,
     ButtonComponent,
-    BlockComponent
+    BlockComponent,
+    SumUpComponent,
+    LoginComponent,
+    RegisterComponent,
+    TitleComponent,
+    SettingsComponent,
+    GameHistoryComponent,
+    SettingsTitleComponent,
+    OptionComponent,
+    SettingsMenuComponent,
   ],
   imports: [
     BrowserModule,

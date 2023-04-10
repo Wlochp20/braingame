@@ -23,6 +23,27 @@
     }
 }
 
+.circle{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 10px;
+    left: 10px; 
+    stroke: black;
+    stroke-width: 5;
+    fill: none;
+    stroke-dasharray: 150;
+    stroke-dashoffset: 130;
+    animation: fill 2s linear forwards;
+}
+
+@keyframes fill {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+
 @media only screen and (max-width: 650px){
     .game-wrapper{
         flex-direction: column-reverse;
@@ -32,9 +53,8 @@
             font-size: 50px;
         }
         &-answers{
-            margin-bottom: 50px;
-            width: 45vmax;
-            height: 200px;
+            margin-bottom: 30px;
+            width: 100vw;
             display: flex;
             justify-content: space-around;
         }

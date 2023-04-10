@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,8 +8,14 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
   isBtnClicked : boolean = false;
+
+  constructor(private router:Router){}
   
   onChange(): void{
     this.isBtnClicked = !this.isBtnClicked;
   } 
+
+  navigate(url:string){
+    this.router.navigateByUrl(url)
+  }
 }

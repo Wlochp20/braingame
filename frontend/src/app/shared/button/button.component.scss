@@ -1,18 +1,19 @@
 .button{
     cursor: pointer;
-    width: 432px;
-    height: 70px;
+    width: 50vmin;
+    height: 50px;
     border: 1px solid #FFFFFF;
     border-radius: 9px;
     background-color: #1E1E1E;
     text-align: center;
-    line-height: 70px;
+    line-height: 50px;
     &:hover{
         background-color: #302f2f;
     }
     &-text{
         color: #FFFFFF;
-        font-size: 36px;
+        font-size: 25px;
+        font-weight: 300;
         font-family: 'quicksand', sans-serif;
     }
 }

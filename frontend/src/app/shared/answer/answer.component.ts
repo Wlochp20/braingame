@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./answer.component.scss']
 })
 export class AnswerComponent {
-  @Input() answer = "";
+  @Input() answer:string = "";
 }

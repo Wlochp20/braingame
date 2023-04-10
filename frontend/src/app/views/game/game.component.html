@@ -1,8 +1,11 @@
 <app-menu></app-menu>
+<svg *ngIf="keyPress" class="circle">
+    <circle cx="50%" cy="50%" r="22"></circle>
+  </svg>
 <div class="game-wrapper">
-    <app-calculations (answered)="checkAnswer($event)" [b]="numberB" [a]="numberA" [symbol]="symbol"></app-calculations>
-    <div class="game-wrapper-answers">
+    <app-calculations (answered)="checkAnswer ($event)" [b]="numberB" [a]="numberA" [symbol]="symbol"></app-calculations>
+    <!-- <div class="game-wrapper-answers">
         <app-answer class="game-wrapper-answers-answer" [answer]="item" *ngFor="let item of answers"></app-answer>
-    </div>
+    </div> -->
     <span class="game-wrapper-text">write answer</span>
 </div>
