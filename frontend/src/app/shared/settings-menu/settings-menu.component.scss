@@ -1,7 +1,13 @@
 .container{
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1E1E1E;
+    position: absolute;
     width: 100vw;
-    height: 50px;
+    height: 85px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     &-back{
         cursor: pointer;
