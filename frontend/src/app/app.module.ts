@@ -18,6 +18,7 @@ import { GameHistoryComponent } from './views/game-history/game-history.componen
 import { SettingsTitleComponent } from './shared/settings-title/settings-title.component';
 import { OptionComponent } from './shared/option/option.component';
 import { SettingsMenuComponent } from './shared/settings-menu/settings-menu.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SettingsMenuComponent } from './shared/settings-menu/settings-menu.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,14 +10,14 @@ import { DataService } from 'src/app/core/services/data-service/data.service';
 export class GameComponent {
   numberA:number = this.generateNumber(1,10);
   numberB:number = this.generateNumber(1,10);
-  symbol = this.generateSymbol();
-  numberOfQuestions = 5;
+  symbol:String = this.generateSymbol();
+  numberOfQuestions:number = 5;
   answers:string[] = new Array(this.numberOfQuestions);
   index:number = 1;
   time:number = 0;
   timer: any;
   keyPress:boolean = false;
-  isEscPressed = false;
+  isEscPressed:boolean = false;
 
   constructor(private router:Router, private dataService: DataService){}
 
@@ -53,7 +53,7 @@ export class GameComponent {
       this.timer = window.setTimeout(() => {
         this.dataService.setData({time: this.time, answers: this.answers})
         this.router.navigateByUrl('/summary') 
-    }, 1900);
+    }, 1400);
     }
   }
 

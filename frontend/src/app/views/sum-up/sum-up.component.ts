@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TransferedData } from 'src/app/core/services/interfaces/transfered-data';
 import { DataService } from 'src/app/core/services/data-service/data.service';
 
 @Component({

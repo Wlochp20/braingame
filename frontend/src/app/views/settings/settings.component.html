@@ -9,30 +9,31 @@
         <div class="container-game-settings-wrapper">
             <div>
                 <span>number of questions: </span>
-                <select>
-                    <option value="infinity"></option>
-                    <option value="other"></option>
+                <select [(ngModel)]="settings.numberOfquestions" *ngIf="!otherOption" (dblclick)="showOtherInp($event)" (change)="showOtherInp($event)" class="container-game-settings-wrapper-opt">
+                    <option value="infinity" >infinity</option>
+                    <option value="{{settings.numberOfquestions=='infinity'? 'other':settings.numberOfquestions}}" id="customOpt" >{{settings.numberOfquestions=='infinity'? 'other':settings.numberOfquestions}}</option>
                 </select>
+                <input value="{{settings.numberOfquestions}}" id="custom" (blur)="setCustomValue($event)"  *ngIf="otherOption" type="number" >
             </div>
             <div>
                 <span>number range: </span>
-                <input value="0" type="number">
+                <input value="{{settings.numberRange[0]}}" type="number">
                 <span>to</span>
-                <input value="10" type="number">
+                <input value="{{settings.numberRange[1]}}" type="number">
             </div>
         </div>
     </div>
     <app-settings-title content="mathematical operations"></app-settings-title>
     <div class="container-mathematical-operations">
         <div class="container-mathematical-operations-wrapper">
-            <app-option [isChecked]="true" class="container-mathematical-operations-wrapper-opt" content="addition" symbol="+"></app-option>
-            <app-option [isChecked]="true" class="container-mathematical-operations-wrapper-opt" content="subtraction" symbol="-"></app-option>
-            <app-option class="container-mathematical-operations-wrapper-opt" content="roots"></app-option>
+            <app-option (change)="changeSetting($event)" [isChecked]="settings.addition" class="container-mathematical-operations-wrapper-opt" content="addition" symbol="+"></app-option>
+            <app-option (change)="changeSetting($event)" [isChecked]="settings.substraction" class="container-mathematical-operations-wrapper-opt" content="substraction" symbol="-"></app-option>
+            <app-option (change)="changeSetting($event)" [isChecked]="settings.roots" class="container-mathematical-operations-wrapper-opt" content="roots"></app-option>
         </div>
         <div class="container-mathematical-operations-wrapper">
-            <app-option [isChecked]="true" class="container-mathematical-operations-wrapper-opt" content="multiplication" symbol="*"></app-option>
-            <app-option [isChecked]="true" class="container-mathematical-operations-wrapper-opt" content="division" symbol=":"></app-option> 
-            <app-option class="container-mathematical-operations-wrapper-opt" content="negative numbers"></app-option>       
+            <app-option (change)="changeSetting($event)" [isChecked]="settings.multiplication" class="container-mathematical-operations-wrapper-opt" content="multiplication" symbol="*"></app-option>
+            <app-option (change)="changeSetting($event)" [isChecked]="settings.division" class="container-mathematical-operations-wrapper-opt" content="division" symbol=":"></app-option> 
+            <app-option (change)="changeSetting($event)" [isChecked]="settings.negativeNumbers" class="container-mathematical-operations-wrapper-opt" content="negative numbers"></app-option>       
         </div>
     </div>
 </div>

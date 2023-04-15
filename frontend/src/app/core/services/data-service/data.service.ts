@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TransferedData } from '../interfaces/transfered-data';
+import { TransferedData } from '../../interfaces/transfered-data';
 
 
 
