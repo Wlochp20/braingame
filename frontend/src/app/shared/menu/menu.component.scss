@@ -50,6 +50,20 @@
             &-btn{
                 margin: 20px;
             }
+            &-text{
+                position: absolute;
+                top: -50px;
+                left: 80px;
+                font-family: 'roboto','sans-serif';
+                &-username{
+                    font-size: 45px;
+                    color: white;
+                }
+                &-subtitle{
+                    font-size: 25px;
+                    color: #9E9E9E;
+                }
+            }
         }
     }
     &-opener{
@@ -100,6 +114,9 @@
             }
         }
     }
+}
+.up{
+    margin-top: 10vh;
 }
 
 @keyframes colorChange {

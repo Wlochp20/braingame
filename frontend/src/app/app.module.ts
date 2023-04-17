@@ -19,6 +19,10 @@ import { SettingsTitleComponent } from './shared/settings-title/settings-title.c
 import { OptionComponent } from './shared/option/option.component';
 import { SettingsMenuComponent } from './shared/settings-menu/settings-menu.component';
 import { FormsModule } from '@angular/forms';
+import { FriendsComponent } from './views/friends/friends.component';
+import { ProfileComponent } from './views/profile/profile.component';
+import { GamemodesComponent } from './views/gamemodes/gamemodes.component';
+import { ShortcutsComponent } from './views/shortcuts/shortcuts.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,10 @@ import { FormsModule } from '@angular/forms';
     SettingsTitleComponent,
     OptionComponent,
     SettingsMenuComponent,
+    FriendsComponent,
+    ProfileComponent,
+    GamemodesComponent,
+    ShortcutsComponent,
   ],
   imports: [
     BrowserModule,

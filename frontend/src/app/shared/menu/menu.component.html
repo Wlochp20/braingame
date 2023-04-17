@@ -2,13 +2,30 @@
     <div [ngClass]="isBtnClicked? 'menu-opener-active':'menu-opener'"></div>
 </div>
 <div [ngClass]="isBtnClicked? 'menu-content':'menu-content-disactive'" class="menu-content">
-    <div *ngIf="isBtnClicked" class="menu-content-btns">
+    <div *ngIf="isBtnClicked && isLogged==false" class="menu-content-btns">
         <app-button (click)="navigate('login')" class="menu-content-btns-btn" content="log in"></app-button>
         <app-button (click)="navigate('register')" class="menu-content-btns-btn" content="register"></app-button>
         <div class="menu-content-btns-wrapper">
-            <app-block img="shortcuts.png" content="shortcuts"></app-block>
-            <app-block img="history.png" content="history"></app-block>
+            <app-block (click)="navigate('shortcuts')"  img="shortcuts.png" content="shortcuts"></app-block>
+            <app-block (click)="navigate('history')"  img="history.png" content="history"></app-block>
             <app-block (click)="navigate('settings')" img="settings.png" content="settings"></app-block>
+        </div>
+    </div>
+    <div *ngIf="isBtnClicked && isLogged" class="menu-content-btns up">
+        <div class="menu-content-btns-text">
+            <span class="menu-content-btns-text-username">Nickname</span>
+            <br>
+            <span class="menu-content-btns-text-subtitle">#1234</span>
+        </div>
+        <div class="menu-content-btns-wrapper">
+            <app-block (click)="navigate('shortcuts')"  img="shortcuts.png" content="shortcuts"></app-block>
+            <app-block (click)="navigate('gamemodes')"  img="gamemode.png" content="gamemodes"></app-block>
+            <app-block (click)="navigate('history')"  img="history.png" content="history"></app-block>
+        </div>
+        <div class="menu-content-btns-wrapper">
+            <app-block (click)="navigate('settings')" img="settings.png" content="settings"></app-block>
+            <app-block (click)="navigate('friends')"  img="friends.png" content="friends"></app-block>
+            <app-block (click)="navigate('profile')"  img="profile.png" content="profile"></app-block>
         </div>
     </div>
 

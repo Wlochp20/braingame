@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent {
   isBtnClicked : boolean = false;
+  isLogged : boolean = true;
 
   constructor(private router:Router){}
   
