@@ -1,8 +1,8 @@
 <div (click)="onChange()" class="menu">
-    <div [ngClass]="isBtnClicked? 'menu-opener-active':'menu-opener'"></div>
+    <div [ngClass]="this.menuService.getStatus()? 'menu-opener-active':'menu-opener'"></div>
 </div>
-<div [ngClass]="isBtnClicked? 'menu-content':'menu-content-disactive'" class="menu-content">
-    <div *ngIf="isBtnClicked && isLogged==false" class="menu-content-btns">
+<div [ngClass]="this.menuService.getStatus()? 'menu-content':'menu-content-disactive'" class="menu-content">
+    <div *ngIf="this.menuService.getStatus() && isLogged==false" class="menu-content-btns">
         <app-button (click)="navigate('login')" class="menu-content-btns-btn" content="log in"></app-button>
         <app-button (click)="navigate('register')" class="menu-content-btns-btn" content="register"></app-button>
         <div class="menu-content-btns-wrapper">
@@ -11,7 +11,7 @@
             <app-block (click)="navigate('settings')" img="settings.png" content="settings"></app-block>
         </div>
     </div>
-    <div *ngIf="isBtnClicked && isLogged" class="menu-content-btns up">
+    <div *ngIf="this.menuService.getStatus() && isLogged" class="menu-content-btns up">
         <div class="menu-content-btns-text">
             <span class="menu-content-btns-text-username">Nickname</span>
             <br>

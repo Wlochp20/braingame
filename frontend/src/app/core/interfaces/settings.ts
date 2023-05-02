@@ -3,9 +3,10 @@ export interface Settings {
     multiplication:boolean;
     substraction:boolean;
     division:boolean;
-    roots:boolean;
+    fractions:boolean;
     negativeNumbers:boolean;
     numberOfquestions:string;
     numberRange:number[];
+    timerCheck:boolean;
     timer:number;
 }

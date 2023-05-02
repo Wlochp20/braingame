@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuService } from 'src/app/core/services/menu/menu.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,12 +9,13 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent {
   isBtnClicked : boolean = false;
-  isLogged : boolean = true;
+  isLogged : boolean = false;
 
-  constructor(private router:Router){}
+  constructor(private router:Router,public menuService:MenuService){}
   
   onChange(): void{
-    this.isBtnClicked = !this.isBtnClicked;
+    this.menuService.changeStatus()
+    console.log(this.menuService.getStatus())
   } 
 
   navigate(url:string){

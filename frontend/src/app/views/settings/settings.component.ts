@@ -1,5 +1,6 @@
 import { Component, ElementRef } from '@angular/core';
 import { Settings } from 'src/app/core/interfaces/settings';
+import { SettingsService } from 'src/app/core/services/settings-service/settings.service';
 
 @Component({
   selector: 'app-settings',
@@ -7,22 +8,11 @@ import { Settings } from 'src/app/core/interfaces/settings';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent {
-  timerChecked:boolean = false;
   otherOption:boolean = false;
   customOptValue:string = "other";
-  settings : Settings = {
-    addition: true,
-    multiplication: true,
-    substraction: true,
-    division: true,
-    roots: false,
-    negativeNumbers: false,
-    numberRange: [0, 10],
-    numberOfquestions: 'infinity',
-    timer: 0,
-  };
-  constructor(private elementRef: ElementRef) {}
-
+  settings : Settings = this.settingsService.getData()
+  
+  constructor(private elementRef: ElementRef,private settingsService: SettingsService) {}
   ngOnInit() {
     const settings = localStorage.getItem('settings');
     if (settings !== null) {
@@ -30,7 +20,6 @@ export class SettingsComponent {
     } else {
       this.updateLocalStorage();
     }
-    console.log(this.settings)
   }
   
   showOtherInp(event:any){
@@ -47,6 +36,18 @@ export class SettingsComponent {
     }
   }
 
+  changeTimer(event:any){
+    if (event.target.value>0) {
+        this.settings.timer = event.target.value;
+        this.updateLocalStorage();
+    }
+  }
+
+  changeCalcData(event:any,numberRange:number){
+      this.settings.numberRange[numberRange] = event.target.value;
+      this.updateLocalStorage(); 
+  }
+
   setCustomValue(event:any){
     if(event.target.value!=""){
       this.customOptValue = event.target.value;
@@ -59,11 +60,11 @@ export class SettingsComponent {
   }
 
   changeOptVisible(){
-    this.timerChecked = !this.timerChecked;
+    this.settings.timerCheck =! this.settings.timerCheck;
+    this.updateLocalStorage()
   }
 
   changeSetting(event: any) {
-    console.log(event.target.id)
     let id = (event.target as Element).id as keyof Settings;
     if(event.target.id=='negative numbers'){
       id = "negativeNumbers" as keyof Settings
@@ -75,6 +76,6 @@ export class SettingsComponent {
   }
 
   updateLocalStorage(){
-    localStorage.setItem('settings', JSON.stringify(this.settings));
+    this.settingsService.setData(this.settings)
   }
 }

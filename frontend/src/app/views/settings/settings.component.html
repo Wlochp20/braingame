@@ -4,8 +4,8 @@
     <app-settings-title content="game settings"></app-settings-title>
     <div class="container-game-settings">
         <div class="container-game-settings-wrapper">
-            <app-option (checked)="changeOptVisible()" content="timer"></app-option>
-            <div *ngIf="timerChecked">time: <input value="3" type="number"> sec</div>
+            <app-option [isChecked]="settings.timerCheck" (checked)="changeOptVisible()" content="timer"></app-option>
+            <div (change) = changeTimer($event) *ngIf="settings.timerCheck">time: <input value="{{settings.timer}}" type="number"> sec</div>
         </div>
         <div class="container-game-settings-wrapper">
             <div>
@@ -18,9 +18,9 @@
             </div>
             <div>
                 <span>number range: </span>
-                <input value="{{settings.numberRange[0]}}" type="number">
+                <input (change)="changeCalcData($event,0)" value="{{settings.numberRange[0]}}" type="number">
                 <span>to</span>
-                <input value="{{settings.numberRange[1]}}" type="number">
+                <input (change)="changeCalcData($event,1)" value="{{settings.numberRange[1]}}" type="number">
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
         <div class="container-mathematical-operations-wrapper">
             <app-option (change)="changeSetting($event)" [isChecked]="settings.addition" class="container-mathematical-operations-wrapper-opt" content="addition" symbol="+"></app-option>
             <app-option (change)="changeSetting($event)" [isChecked]="settings.substraction" class="container-mathematical-operations-wrapper-opt" content="substraction" symbol="-"></app-option>
-            <app-option (change)="changeSetting($event)" [isChecked]="settings.roots" class="container-mathematical-operations-wrapper-opt" content="roots"></app-option>
+            <app-option (change)="changeSetting($event)" [isChecked]="settings.fractions" class="container-mathematical-operations-wrapper-opt" content="fractions"></app-option>
         </div>
         <div class="container-mathematical-operations-wrapper">
             <app-option (change)="changeSetting($event)" [isChecked]="settings.multiplication" class="container-mathematical-operations-wrapper-opt" content="multiplication" symbol="*"></app-option>

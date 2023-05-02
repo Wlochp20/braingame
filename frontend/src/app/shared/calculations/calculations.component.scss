@@ -6,7 +6,15 @@
     &-calculation{
         letter-spacing: 0.4em;
         font-size: 128px;
+        display: flex;
         font-family: 'Inter', sans-serif;
+        &-wrapper{
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            grid-template-columns: 300px 50px 300px 20px;
+            grid-template-rows: 100px 70px 100px;
+        }
     }
     &-number{
         height: 100px;
@@ -18,6 +26,42 @@
         font-size: 50px;
         font-family: 'Inter', sans-serif;
     }
+}
+#aMeter{
+    grid-column: 1;
+    grid-row: 1;
+}
+#bMeter{
+    grid-column: 3;
+    grid-row: 1;
+}
+#aDenominator{
+    grid-column: 1;
+    grid-row: 3;
+}
+#bDenominator{
+    grid-column: 3;
+    grid-row: 3;
+}
+#aLine{
+    background-color: black;
+    width: 50%;
+    margin-right: 40px;
+    height: 5px;
+    grid-column: 1;
+    grid-row: 2;
+}
+#bLine{
+    background-color: black;
+    width: 50%;
+    margin-right: 40px;
+    height: 5px;
+    grid-column: 3;
+    grid-row: 2;
+}
+#symbol{
+    grid-column: 2;
+    grid-row: 2;
 }
 
 input::-webkit-outer-spin-button,
